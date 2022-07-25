@@ -6,11 +6,11 @@ import pandas as pd
 from running_median import RunningMedian
 from remedian import Remedian
 
-sensor_data = pd.read_csv('sensor_data.csv')
+sensor_data = pd.read_csv('sensor_data_reducted.csv')
 print(sensor_data.describe())
 
 running_median = RunningMedian()
-remedian = Remedian(11)
+remedian = Remedian(11)  # buffer size can be adjusted here
 
 running_median_time = time.time()
 sensor_data['temp'].apply(running_median.push)

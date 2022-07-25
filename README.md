@@ -1,13 +1,14 @@
 # Findinding a median in a stream
 
-Algorithms:
+You can find here two simple algorithms to calculate median on a stream.
+The algorithms are:
 
 - Running median
 - Remedian
 
-More details on the article - 
+More details in the article - 
 
-## How to run?
+## How to run benchmark?
 
 0. Clone the repository.
 
@@ -22,3 +23,8 @@ pip install pandas
 ```bash
 python benchmark.py
 ```
+
+## Where is test data coming from?
+
+The data is coming from Kaggle. Some columns were dropped to save a space. You can find full dataset [here](https://www.kaggle.com/datasets/atulanandjha/temperature-readings-iot-devices
+).
