@@ -16,4 +16,4 @@ class RunningMedian:
 # A.push(3)
 # A.push(4)
 
-# print(A.median)  # 2.5
+# print(A.median())

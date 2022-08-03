@@ -22,7 +22,7 @@ class Remedian:
         buffer = self.buffers[self.i]
 
         for i in range(len(buffer)):
-            if not buffer[i]:
+            if buffer[i] is None:
                 buffer[i] = number
                 break
         

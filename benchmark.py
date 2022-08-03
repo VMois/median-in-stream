@@ -7,7 +7,7 @@ from running_median import RunningMedian
 from remedian import Remedian
 
 sensor_data = pd.read_csv('sensor_data_reducted.csv')
-print(sensor_data.describe())
+print(sensor_data["temp"].describe())
 
 running_median = RunningMedian()
 remedian = Remedian(11)  # buffer size can be adjusted here
@@ -16,14 +16,13 @@ running_median_time = time.time()
 sensor_data['temp'].apply(running_median.push)
 print("\nRunningMedian, "
       f"median: {running_median.median()}, "
-      f"time: {time.time() - running_median_time}, "
-      f"memory (in bytes): {sys.getsizeof(running_median)}")
+      f"time: {time.time() - running_median_time}")
 
 
 remedian_time = time.time()
 sensor_data['temp'].apply(remedian.push)
 print(f"\nRemedian, median: {remedian.median()}, "
-      f"time: {time.time() - remedian_time}, memory (in bytes): {sys.getsizeof(remedian)}")
+      f"time: {time.time() - remedian_time}, buffer size: {remedian.buffer_size}, buffers number: {len(remedian.buffers)}")
 
 
 def basic_median(data):
